@@ -11,8 +11,8 @@ const RightSide = () => {
   return (
     <form onSubmit={sumbitLogin} className="login-form validate-form">
       <FormHeader />
-      <Input type="number" label="شماره دانشجویی" />
-      <Input type="number" label="شماره دانشجویی" />
+      <Input type="number" name="id" label="شماره دانشجویی" />
+      <Input type="password" name="password" label="رمز عبور" />
       <LoginButton />
       <LinkToManagePassword />
     </form>
