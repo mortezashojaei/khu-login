@@ -161,14 +161,14 @@ iframe {
 /*==================================================================
 [ Text ]*/
 .txt1 {
-  font-family: Montserrat-Regular;
-  font-size: 13px;
+  font-family: Shabnam;
+  font-size: 16px;
   line-height: 1.4;
   color: #555555;
 }
 
 .txt2 {
-  font-family: Montserrat-Regular;
+  font-family: Shabnam;
   font-size: 13px;
   line-height: 1.4;
   color: #999999;
@@ -255,6 +255,13 @@ iframe {
   background: rgba(0, 0, 0, 0.1);
 }
 
+.login-more-background {
+  background-image: url("/images/bg.jpg");
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+  
+}
+
 /*==================================================================
 [ Form ]*/
 
@@ -296,7 +303,8 @@ iframe {
 }
 
 .label-input {
-  font-family: Montserrat-Regular;
+  font-family: Shabnam;
+  direction: rtl;
   font-size: 18px;
   color: #999999;
   line-height: 1.2;
@@ -305,8 +313,8 @@ iframe {
   position: absolute;
   pointer-events: none;
   width: 100%;
-  padding-left: 24px;
-  left: 0;
+  padding-right: 24px;
+  right: 0;
   top: 30px;
 
   -webkit-transition: all 0.4s;
@@ -319,7 +327,7 @@ iframe {
   display: block;
   width: 100%;
   background: transparent;
-  font-family: Montserrat-Regular;
+  font-family: Shabnam;
   font-size: 18px;
   color: #555555;
   line-height: 1.2;
@@ -423,7 +431,7 @@ input.input {
 
 .label-checkbox100::before {
   content: "\f00c";
-  font-family: FontAwesome;
+  font-family: Shabnam;
   font-size: 13px;
   color: transparent;
 
@@ -480,8 +488,9 @@ input.input {
   border-radius: 10px;
   background: #6675df;
 
-  font-family: Montserrat-Bold;
-  font-size: 12px;
+  font-family: Shabnam;
+  font-weight: 500;
+  font-size: 18px;
   color: #fff;
   line-height: 1.2;
   text-transform: uppercase;
@@ -572,7 +581,7 @@ input.input {
 
 .alert-validate::after {
   content: "\f12a";
-  font-family: FontAwesome;
+  font-family: Shabnam;
   display: block;
   position: absolute;
   z-index: 110;
