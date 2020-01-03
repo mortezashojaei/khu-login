@@ -156,7 +156,31 @@ iframe {
 }
 
 /*//////////////////////////////////////////////////////////////////
-[ utility ]*/
+[ Header ]*/
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  height: 120px;
+  width: 85px;
+  margin: auto;
+}
+
+.login-form-title {
+  width: 100%;
+  display: block;
+  font-family: Shabnam;
+  font-size: 30px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  padding-top: 40px;
+  padding-button: 40px;
+
+}
 
 /*==================================================================
 [ Text ]*/
@@ -259,7 +283,6 @@ iframe {
   background-image: url("/images/bg.jpg");
   filter: blur(3px);
   -webkit-filter: blur(3px);
-  
 }
 
 /*==================================================================
@@ -270,17 +293,7 @@ iframe {
   min-height: 100vh;
   display: block;
   background-color: #f7f7f7;
-  padding: 173px 55px 55px 55px;
-}
-
-.login-form-title {
-  width: 100%;
-  display: block;
-  font-family: Shabnam;
-  font-size: 30px;
-  color: #333333;
-  line-height: 1.2;
-  text-align: center;
+  padding: 40px 55px 55px 55px;
 }
 
 /*------------------------------------------------------------------
