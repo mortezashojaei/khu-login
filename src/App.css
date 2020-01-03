@@ -2,38 +2,8 @@
 [ FONT ]*/
 
 @font-face {
-  font-family: Poppins-Regular;
-  src: url("../fonts/poppins/Poppins-Regular.ttf");
-}
-
-@font-face {
-  font-family: Poppins-Medium;
-  src: url("../fonts/poppins/Poppins-Medium.ttf");
-}
-
-@font-face {
-  font-family: Poppins-Bold;
-  src: url("../fonts/poppins/Poppins-Bold.ttf");
-}
-
-@font-face {
-  font-family: Poppins-SemiBold;
-  src: url("../fonts/poppins/Poppins-SemiBold.ttf");
-}
-
-@font-face {
-  font-family: Montserrat-Bold;
-  src: url("../fonts/montserrat/Montserrat-Bold.ttf");
-}
-
-@font-face {
-  font-family: Montserrat-SemiBold;
-  src: url("../fonts/montserrat/Montserrat-SemiBold.ttf");
-}
-
-@font-face {
-  font-family: Montserrat-Regular;
-  src: url("../fonts/montserrat/Montserrat-Regular.ttf");
+  font-family: Shabnam;
+  src: url("/assets/Shabnam.ttf");
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -48,12 +18,12 @@
 body,
 html {
   height: 100%;
-  font-family: Poppins-Regular, sans-serif;
+  font-family: Shabnam, sans-serif;
 }
 
 /*---------------------------------------------*/
 a {
-  font-family: Poppins-Regular;
+  font-family: Shabnam;
   font-size: 14px;
   line-height: 1.7;
   color: #666666;
@@ -84,7 +54,7 @@ h6 {
 }
 
 p {
-  font-family: Poppins-Regular;
+  font-family: Shabnam;
   font-size: 14px;
   line-height: 1.7;
   color: #666666;
@@ -299,7 +269,7 @@ iframe {
 .login-form-title {
   width: 100%;
   display: block;
-  font-family: Poppins-Regular;
+  font-family: Shabnam;
   font-size: 30px;
   color: #333333;
   line-height: 1.2;
@@ -440,7 +410,7 @@ input.input {
 }
 
 .label-checkbox100 {
-  font-family: Poppins-Regular;
+  font-family: Shabnam;
   font-size: 13px;
   color: #999999;
   line-height: 1.4;
@@ -585,7 +555,7 @@ input.input {
   right: 12px;
   pointer-events: none;
 
-  font-family: Poppins-Regular;
+  font-family: Shabnam;
   color: #c80000;
   font-size: 13px;
   line-height: 1.4;
