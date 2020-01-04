@@ -40,7 +40,7 @@ a:focus {
 
 a:hover {
   text-decoration: none;
-  color: #6675df;
+  color: #2dbaed;
 }
 
 /*---------------------------------------------*/
@@ -179,7 +179,6 @@ iframe {
   text-align: center;
   padding-top: 40px;
   padding-button: 40px;
-
 }
 
 /*==================================================================
@@ -259,6 +258,7 @@ iframe {
 /*==================================================================
 [ login more ]*/
 .login-more {
+  display: flex;
   width: calc(100% - 560px);
   background-repeat: no-repeat;
   background-size: cover;
@@ -276,15 +276,12 @@ iframe {
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.1);
-}
-
-.login-more-background {
-  background-image: url("/images/bg.jpg");
+  background: url("/images/bg.jpg");
   filter: blur(3px);
-  -webkit-filter: blur(3px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-
 /*==================================================================
 [ Form ]*/
 
@@ -365,7 +362,7 @@ input.input {
   top: -1px;
   left: -1px;
   pointer-events: none;
-  border: 1px solid #6675df;
+  border: 1px solid #2dbaed;
   border-radius: 10px;
 
   visibility: hidden;
@@ -460,7 +457,7 @@ input.input {
   height: 18px;
   border-radius: 2px;
   background: #fff;
-  border: 1px solid #6675df;
+  border: 1px solid #2dbaed;
   left: 0;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -471,7 +468,7 @@ input.input {
 }
 
 .input-checkbox100:checked + .label-checkbox100::before {
-  color: #6675df;
+  color: #2dbaed;
 }
 
 /*------------------------------------------------------------------
@@ -499,7 +496,7 @@ input.input {
   width: 100%;
   height: 50px;
   border-radius: 10px;
-  background: #6675df;
+  background: #2dbaed;
 
   font-family: Shabnam;
   font-weight: 500;
@@ -517,6 +514,36 @@ input.input {
 
 .login-form-btn:hover {
   background: #333333;
+}
+
+/*-----------Cards*/
+.card {
+  border-radius: 45px 0px 0px 45px;
+  background: #2dbaed;
+  padding: 20px;
+  width: calc(100% - 200px);
+  height: 80px;
+  z-index: 2;
+  backdrop-filter: blur(3px);
+  direction: rtl;
+  text-align: right;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+}
+
+.card:hover {
+  margin-right: 30px;
+}
+
+.cards-wrapper {
+  justify-content: center;
+  margin-top: 30px;
+  direction: rtl;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
 }
 
 /*------------------------------------------------------------------
@@ -550,6 +577,88 @@ input.input {
     padding-right: 15px;
     padding-top: 70px;
   }
+}
+
+/*--------------tabs*/
+
+.tabs {
+  display: block;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+.tabs [class^="tab"] label,
+.tabs [class*=" tab"] label {
+  color: #efedef;
+  cursor: pointer;
+  display: block;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1em;
+  padding: 2rem 0;
+  text-align: center;
+}
+.tabs [class^="tab"] [type="radio"],
+.tabs [class*=" tab"] [type="radio"] {
+  border-bottom: 1px solid rgba(239, 237, 239, 0.5);
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.tabs [class^="tab"] [type="radio"]:hover,
+.tabs [class^="tab"] [type="radio"]:focus,
+.tabs [class*=" tab"] [type="radio"]:hover,
+.tabs [class*=" tab"] [type="radio"]:focus {
+  border-bottom: 1px solid #2dbaed;
+}
+.tabs [class^="tab"] [type="radio"]:checked,
+.tabs [class*=" tab"] [type="radio"]:checked {
+  border-bottom: 2px solid #2dbaed;
+}
+.tabs [class^="tab"] [type="radio"]:checked + div,
+.tabs [class*=" tab"] [type="radio"]:checked + div {
+  opacity: 1;
+}
+.tabs [class^="tab"] [type="radio"] + div,
+.tabs [class*=" tab"] [type="radio"] + div {
+  display: block;
+  opacity: 0;
+  padding: 2rem 0;
+  width: 90%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.tabs .tab-2 {
+  width: 50%;
+}
+.tabs .tab-2 [type="radio"] + div {
+  width: 200%;
+  margin-left: 200%;
+}
+.tabs .tab-2 [type="radio"]:checked + div {
+  margin-left: 0;
+}
+.tabs .tab-2:last-child [type="radio"] + div {
+  margin-left: 100%;
+}
+.tabs .tab-2:last-child [type="radio"]:checked + div {
+  margin-left: -100%;
 }
 
 /*------------------------------------------------------------------
