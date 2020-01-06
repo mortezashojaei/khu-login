@@ -13,6 +13,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  /* font-family: Shabnam, sans-serif; */
 }
 
 body,
@@ -40,7 +41,7 @@ a:focus {
 
 a:hover {
   text-decoration: none;
-  color: #6675df;
+  color: #2dbaed;
 }
 
 /*---------------------------------------------*/
@@ -179,7 +180,6 @@ iframe {
   text-align: center;
   padding-top: 40px;
   padding-button: 40px;
-
 }
 
 /*==================================================================
@@ -259,6 +259,7 @@ iframe {
 /*==================================================================
 [ login more ]*/
 .login-more {
+  display: flex;
   width: calc(100% - 560px);
   background-repeat: no-repeat;
   background-size: cover;
@@ -276,15 +277,12 @@ iframe {
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.1);
-}
-
-.login-more-background {
-  background-image: url("/images/bg.jpg");
+  background: url("/images/bg.jpg");
   filter: blur(3px);
-  -webkit-filter: blur(3px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-
 /*==================================================================
 [ Form ]*/
 
@@ -365,7 +363,7 @@ input.input {
   top: -1px;
   left: -1px;
   pointer-events: none;
-  border: 1px solid #6675df;
+  border: 1px solid #2dbaed;
   border-radius: 10px;
 
   visibility: hidden;
@@ -460,7 +458,7 @@ input.input {
   height: 18px;
   border-radius: 2px;
   background: #fff;
-  border: 1px solid #6675df;
+  border: 1px solid #2dbaed;
   left: 0;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -471,7 +469,7 @@ input.input {
 }
 
 .input-checkbox100:checked + .label-checkbox100::before {
-  color: #6675df;
+  color: #2dbaed;
 }
 
 /*------------------------------------------------------------------
@@ -499,7 +497,7 @@ input.input {
   width: 100%;
   height: 50px;
   border-radius: 10px;
-  background: #6675df;
+  background: #2dbaed;
 
   font-family: Shabnam;
   font-weight: 500;
@@ -519,20 +517,58 @@ input.input {
   background: #333333;
 }
 
+/*-----------Cards*/
+.card {
+  border-radius: 45px 0px 0px 45px;
+  background: #b2d233;
+  padding: 20px;
+  width: 85%;
+  height: 80px;
+  z-index: 2;
+  backdrop-filter: blur(3px);
+  direction: rtl;
+  text-align: right;
+  font-size: 18px;
+  font-weight: 500;
+  color: #424040;
+  margin: auto;
+  cursor: pointer;
+}
+
+.card:hover {
+  margin-left: 30px;
+}
+
+.cards-wrapper {
+  width: 100%;
+  margin-top: 15px;
+  direction: rtl;
+  height: 600px;
+  overflow-y: auto;
+}
+
+.arrow {
+  float: left;
+  font-size: 1.7rem;
+  color: #2dbaed;
+}
+
+.circle {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #2dbaed;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.card-link {
+  color: blue;
+  text-decoration: none; /* no underline */
+}
+
 /*------------------------------------------------------------------
 [ Responsive ]*/
-
-@media (max-width: 992px) {
-  .login-form {
-    width: 50%;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  .login-more {
-    width: 50%;
-  }
-}
 
 @media (max-width: 768px) {
   .login-form {
@@ -540,7 +576,7 @@ input.input {
   }
 
   .login-more {
-    display: none;
+    width: 100%;
   }
 }
 
@@ -550,6 +586,72 @@ input.input {
     padding-right: 15px;
     padding-top: 70px;
   }
+}
+@media (max-width: 1000px) {
+  .arrow {
+    display: none;
+  }
+}
+
+/*--------------tabs*/
+
+.tabs {
+  display: block;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  cursor: pointer;
+}
+.tabs [class^="tab"] label,
+.tabs [class*=" tab"] label {
+  color: #efedef;
+  cursor: pointer;
+  display: block;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1em;
+  padding: 0.8rem 0;
+  text-align: center;
+}
+.tabs [class^="tab"] [type="radio"],
+.tabs [class*=" tab"] [type="radio"] {
+  border-bottom: 1px solid rgba(239, 237, 239, 0.5);
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.tabs [class^="tab"] [type="radio"]:hover,
+.tabs [class^="tab"] [type="radio"]:focus,
+.tabs [class*=" tab"] [type="radio"]:hover,
+.tabs [class*=" tab"] [type="radio"]:focus {
+  border-bottom: 1px solid #2dbaed;
+}
+.tabs [class^="tab"] [type="radio"]:checked,
+.tabs [class*=" tab"] [type="radio"]:checked {
+  border-bottom: 2px solid #2dbaed;
+}
+.tabs .tab-2 {
+  width: 50%;
+}
+
+.tab-2 label button {
+  font-size: 16px;
+  font-family: Shabnam;
+  font-weight: 700;
 }
 
 /*------------------------------------------------------------------
