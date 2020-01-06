@@ -1,9 +1,15 @@
-import React from 'react';
+import React from "react";
 
-const Card = () => {
-    return ( 
-        <div className="card m-t-10">نحوه ثبت نام در سیستم تغذیه</div>
-     );
-}
- 
+const Card = ({ link, title }) => {
+  return (
+    <a className="card-link" href={link} target="blank">
+      <p className="card m-t-10 flex">
+        <div className="circle"></div>
+        {title}
+        <span className="arrow">&#8668;</span>
+      </p>
+    </a>
+  );
+};
+
 export default Card;
