@@ -165,8 +165,8 @@ iframe {
 }
 
 .logo {
-  height: 120px;
-  width: 85px;
+  height: 9rem;
+  width: 6rem;
   margin: auto;
 }
 
@@ -178,8 +178,7 @@ iframe {
   color: #333333;
   line-height: 1.2;
   text-align: center;
-  padding-top: 40px;
-  padding-button: 40px;
+  padding: 25px;
 }
 
 /*==================================================================
@@ -230,7 +229,6 @@ iframe {
 
 .container-login {
   width: 100%;
-  min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -294,6 +292,11 @@ iframe {
   padding: 40px 55px 55px 55px;
 }
 
+.captcha{
+  height: 4rem;
+  border-radius: 10px;
+}
+
 /*------------------------------------------------------------------
 [ Input ]*/
 
@@ -306,11 +309,11 @@ iframe {
   flex-wrap: wrap;
   align-items: flex-end;
   width: 100%;
-  height: 80px;
+  height: 4rem;
   position: relative;
   border: 1px solid #e6e6e6;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
 }
 
 .label-input {
@@ -324,9 +327,9 @@ iframe {
   position: absolute;
   pointer-events: none;
   width: 100%;
-  padding-right: 24px;
+  padding-right: 1rem;
   right: 0;
-  top: 30px;
+  top: 1.3rem;
 
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
@@ -537,6 +540,7 @@ input.input {
 
 .card:hover {
   margin-left: 30px;
+  transition: all 0.3s ease-in-out;
 }
 
 .cards-wrapper {
@@ -586,6 +590,14 @@ input.input {
     padding-right: 15px;
     padding-top: 70px;
   }
+  .logo {
+    height: 7.5rem;
+    width: 5.5rem;
+  }
+  
+  .login-form-title {
+    font-size: 24px;
+  }
 }
 @media (max-width: 1000px) {
   .arrow {
@@ -622,7 +634,7 @@ input.input {
 }
 .tabs [class^="tab"] [type="radio"],
 .tabs [class*=" tab"] [type="radio"] {
-  border-bottom: 1px solid rgba(239, 237, 239, 0.5);
+  border-bottom: 3px solid rgba(239, 237, 239, 0.5);
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -638,11 +650,11 @@ input.input {
 .tabs [class^="tab"] [type="radio"]:focus,
 .tabs [class*=" tab"] [type="radio"]:hover,
 .tabs [class*=" tab"] [type="radio"]:focus {
-  border-bottom: 1px solid #2dbaed;
+  border-bottom: 3px solid #2dbaed;
 }
 .tabs [class^="tab"] [type="radio"]:checked,
 .tabs [class*=" tab"] [type="radio"]:checked {
-  border-bottom: 2px solid #2dbaed;
+  border-bottom: 3px solid #2dbaed;
 }
 .tabs .tab-2 {
   width: 50%;

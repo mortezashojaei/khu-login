@@ -4,7 +4,7 @@ const FormHeader = () => {
   return (
     <div className="header">
       <img className="logo" src="/images/kharazmi-logo.png" />
-      <span className="login-form-title p-b-43">
+      <span className="login-form-title">
         مرکز فناوری دانشگاه خوارزمی
       </span>
     </div>
