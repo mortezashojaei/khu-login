@@ -291,10 +291,24 @@ iframe {
   background-color: #f7f7f7;
   padding: 40px 55px 55px 55px;
 }
+.captcha-wrapper {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
 
-.captcha{
+.captcha {
   height: 4rem;
   border-radius: 10px;
+  margin: auto;
+}
+
+.success-login-message {
+  color: #08a408;
+  text-align: center;
+  font-size: 18px;
+  padding: 5px;
 }
 
 /*------------------------------------------------------------------
@@ -520,10 +534,20 @@ input.input {
   background: #333333;
 }
 
+.login-form-btn:disabled {
+  background: gray;
+}
+
+.bg-red {
+  background: red !important;
+}
+
 /*-----------Cards*/
 .card {
-  border-radius: 45px 0px 0px 45px;
-  background: #b2d233;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px rgba(25, 25, 25, 0.5);
+  box-shadow: 0 0 10px rgba(25, 25, 25, 0.5);
+  background: #e8e4e4;
   padding: 20px;
   width: 85%;
   height: 80px;
@@ -551,10 +575,11 @@ input.input {
   overflow-y: auto;
 }
 
-.arrow {
+.more_in_link {
   float: left;
-  font-size: 1.7rem;
+  font-size: 0.85rem;
   color: #2dbaed;
+  margin: auto;
 }
 
 .circle {
@@ -594,7 +619,7 @@ input.input {
     height: 7.5rem;
     width: 5.5rem;
   }
-  
+
   .login-form-title {
     font-size: 24px;
   }
