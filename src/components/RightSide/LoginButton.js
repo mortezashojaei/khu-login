@@ -1,9 +1,12 @@
 import React from "react";
 
-const LoginButton = ({ successLogin }) => {
+const LoginButton = ({ successLogin, isDisable }) => {
   return (
     <div className="container-login-form-btn">
-      <button className="login-form-btn">
+      <button
+        disabled={successLogin ? false : isDisable}
+        className={`login-form-btn ${successLogin ? "bg-red" : ""}`}
+      >
         {successLogin ? "خروج از حساب کاربری" : "ورود به حساب کاربری"}
       </button>
     </div>

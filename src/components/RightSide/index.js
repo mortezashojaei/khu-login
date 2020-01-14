@@ -12,8 +12,6 @@ const RightSide = () => {
   const [captchaImage, setCaptchaImage] = useState("");
   const [captcha_key, setCaptchaKey] = useState("");
   const [successLogin, setSuccessLogin] = useState(false);
-  const [section_one, setSectionOne] = useState("");
-  const [section_two, setSectionTwo] = useState("");
 
   useEffect(() => {
     if (successLogin) {
@@ -67,6 +65,8 @@ const RightSide = () => {
     }
   }
 
+  const isDisableSubmit = !username || !password || !captcha;
+
   return (
     <form onSubmit={sumbitLogin} className="login-form validate-form">
       <FormHeader />
@@ -77,6 +77,7 @@ const RightSide = () => {
         onChange={e => {
           setUserName(e.target.value);
         }}
+        readOnly={successLogin}
         value={username}
         type="number"
         name="id"
@@ -104,7 +105,7 @@ const RightSide = () => {
         name="captcha"
         label="لطفا ارقام تصویر بالا را وارد نمایید"
       />
-      <LoginButton successLogin={successLogin} />
+      <LoginButton isDisable={isDisableSubmit} successLogin={successLogin} />
       <LinkToManagePassword />
     </form>
   );
