@@ -3,11 +3,13 @@ import React from "react";
 const Card = ({ link, title }) => {
   return (
     <a className="card-link" href={link} target="blank">
-      <p className="card m-t-10 flex">
+      <div className="dis-flex">
+      <p className="card m-t-10 ">
         <div className="circle"></div>
-        {title}
-        <span className="arrow">&#8668;</span>
+        بنلم سمبندذ مقپیر
       </p>
+      <div className="more_in_link">بیشتر...</div>
+      </div>
     </a>
   );
 };
