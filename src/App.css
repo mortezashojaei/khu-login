@@ -549,8 +549,8 @@ input.input {
   box-shadow: 0 0 10px rgba(25, 25, 25, 0.5);
   background: #e8e4e4;
   padding: 20px;
-  width: 85%;
-  height: 80px;
+  width: 80%;
+  min-height: 80px;
   z-index: 2;
   backdrop-filter: blur(3px);
   direction: rtl;
@@ -559,12 +559,17 @@ input.input {
   font-weight: 500;
   color: #424040;
   margin: auto;
+  margin-top: 15px;
   cursor: pointer;
 }
 
 .card:hover {
   margin-left: 30px;
   transition: all 0.3s ease-in-out;
+}
+
+.card-text{
+  width: 90%;
 }
 
 .cards-wrapper {
@@ -577,9 +582,12 @@ input.input {
 
 .more_in_link {
   float: left;
+  width: 10%;
+  height: 100%;
+  margin: auto;
   font-size: 0.85rem;
   color: #2dbaed;
-  margin: auto;
+  text-align: left;
 }
 
 .circle {
