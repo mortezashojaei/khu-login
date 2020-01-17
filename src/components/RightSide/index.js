@@ -79,7 +79,7 @@ const RightSide = () => {
         readOnly={successLogin}
         value={username}
         type="number"
-        name="id"
+        name="username"
         label="شماره دانشجویی"
       />
       {!successLogin && (
