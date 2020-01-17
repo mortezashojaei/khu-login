@@ -561,12 +561,16 @@ input.input {
   margin: auto;
   margin-top: 15px;
   cursor: pointer;
+
 }
 
-.card:hover {
+/* .card:hover {
   margin-left: 30px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-}
+} */
 
 .card-text{
   width: 90%;

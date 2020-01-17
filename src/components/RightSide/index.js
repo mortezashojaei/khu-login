@@ -12,6 +12,7 @@ const RightSide = () => {
   const [captchaImage, setCaptchaImage] = useState("");
   const [captcha_key, setCaptchaKey] = useState("");
   const [successLogin, setSuccessLogin] = useState(false);
+  const [isLOading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (successLogin) {
@@ -35,6 +36,7 @@ const RightSide = () => {
   function sumbitLogin(e) {
     e.preventDefault();
     if (!successLogin) {
+      setIsLoading(true);
       axios
         .post("http://localhost:3000/login", {
           username,
@@ -45,8 +47,11 @@ const RightSide = () => {
         })
         .then(response => {
           setSuccessLogin(true);
+          setIsLoading(false);
         })
         .catch(error => {
+          setIsLoading(false);
+
           alert("error");
         });
     } else {
@@ -65,7 +70,7 @@ const RightSide = () => {
     }
   }
 
-  const isDisableSubmit = !username || !password || !captcha;
+  const isDisableSubmit = !username || !password || !captcha || isLOading;
 
   return (
     <form onSubmit={sumbitLogin} className="login-form validate-form">
@@ -105,7 +110,11 @@ const RightSide = () => {
         name="captcha"
         label="لطفا ارقام تصویر بالا را وارد نمایید"
       />
-      <LoginButton isDisable={isDisableSubmit} successLogin={successLogin} />
+      <LoginButton
+        isLOading={isLOading}
+        isDisable={isDisableSubmit}
+        successLogin={successLogin}
+      />
       <LinkToManagePassword />
     </form>
   );
