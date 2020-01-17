@@ -3,7 +3,7 @@ import Input from "./Input";
 import LoginButton from "./LoginButton";
 import FormHeader from "./FormHeader";
 import LinkToManagePassword from "./LinkToManagePassword";
-import axios from "axios";
+import { logout, login, getCaptcha } from "../../services/apiService";
 
 const RightSide = () => {
   const [username, setUserName] = useState("");
@@ -21,8 +21,7 @@ const RightSide = () => {
       setCaptchaImage("");
       setCaptchaKey("");
     } else {
-      axios
-        .get("http://localhost:3000")
+      getCaptcha()
         .then(response => {
           setCaptchaImage(`data:image/png;base64, ${response.data.captcha}`);
           setCaptchaKey(response.data.captcha_key);
@@ -37,14 +36,13 @@ const RightSide = () => {
     e.preventDefault();
     if (!successLogin) {
       setIsLoading(true);
-      axios
-        .post("http://localhost:3000/login", {
-          username,
-          password,
-          captcha_key,
-          captcha,
-          mode: 191
-        })
+      login({
+        username,
+        password,
+        captcha_key,
+        captcha,
+        mode: 191
+      })
         .then(response => {
           setSuccessLogin(true);
           setIsLoading(false);
@@ -55,11 +53,7 @@ const RightSide = () => {
           alert("error");
         });
     } else {
-      axios
-        .post("http://localhost:3000/logout", {
-          username,
-          mode: 193
-        })
+      logout(username)
         .then(response => {
           setUserName("");
           setSuccessLogin(false);
@@ -88,28 +82,32 @@ const RightSide = () => {
         name="id"
         label="شماره دانشجویی"
       />
-      <Input
-        onChange={e => {
-          setPssword(e.target.value);
-        }}
-        value={password}
-        type="password"
-        name="password"
-        label="رمز عبور"
-      />
-      <div className="captcha-wrapper">
-        <img className="captcha" src={captchaImage} />
-      </div>
-      <Input
-        onChange={e => {
-          setCaptcha(e.target.value);
-        }}
-        value={captcha}
-        autoComplete="off"
-        type="number"
-        name="captcha"
-        label="لطفا ارقام تصویر بالا را وارد نمایید"
-      />
+      {!successLogin && (
+        <>
+          <Input
+            onChange={e => {
+              setPssword(e.target.value);
+            }}
+            value={password}
+            type="password"
+            name="password"
+            label="رمز عبور"
+          />
+          <div className="captcha-wrapper">
+            <img className="captcha" src={captchaImage} />
+          </div>
+          <Input
+            onChange={e => {
+              setCaptcha(e.target.value);
+            }}
+            value={captcha}
+            autoComplete="off"
+            type="number"
+            name="captcha"
+            label="لطفا ارقام تصویر بالا را وارد نمایید"
+          />
+        </>
+      )}
       <LoginButton
         isLOading={isLOading}
         isDisable={isDisableSubmit}
