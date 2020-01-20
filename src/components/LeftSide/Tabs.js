@@ -1,6 +1,6 @@
 import React from "react";
 
-const Tabs = ({ tabsIndex, setTabsIndex }) => {
+const Tabs = ({ tabsIndex, setTabsIndex ,titleOne,titleTwo}) => {
   return (
     <div className="tabs">
       <div className="tab-2">
@@ -10,7 +10,7 @@ const Tabs = ({ tabsIndex, setTabsIndex }) => {
               setTabsIndex(0);
             }}
           >
-            اخبار
+            {titleTwo}
           </button>
         </label>
 
@@ -28,7 +28,7 @@ const Tabs = ({ tabsIndex, setTabsIndex }) => {
               setTabsIndex(1);
             }}
           >
-            لینک های مهم
+            {titleOne}
           </button>
         </label>
         <input

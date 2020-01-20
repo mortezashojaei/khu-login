@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
 import Tabs from "./Tabs";
 import Cards from "./Cards";
-import axios from "axios";
+import { getMainPageData } from "../../services/apiService";
+
 const LeftSide = () => {
   const [tabsIndex, setTabsIndex] = useState(1);
   const [section_one, setSectionOne] = useState("");
   const [section_two, setSectionTwo] = useState("");
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3000/main-page-data")
+    getMainPageData()
       .then(response => {
         setSectionOne(response.data.section_one);
         setSectionTwo(response.data.section_two);
       })
       .catch(error => {
-        alert("error");
+        alert("خطایی در دریافت مطالب رخ داده است");
       });
   }, []);
   return (

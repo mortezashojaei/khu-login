@@ -74,6 +74,17 @@ input {
   border: none;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
 textarea {
   outline: none;
   border: none;
@@ -139,6 +150,28 @@ textarea:-ms-input-placeholder {
 label {
   display: block;
   margin: 0;
+}
+
+/*----------------------------------------------*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2dbaed69;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2dbaed;
 }
 
 /*---------------------------------------------*/
@@ -561,18 +594,17 @@ input.input {
   margin: auto;
   margin-top: 15px;
   cursor: pointer;
-
 }
 
-/* .card:hover {
-  margin-left: 30px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-} */
+.card:hover {
+  width: 85%;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
 
-.card-text{
+.card-text {
   width: 90%;
 }
 
