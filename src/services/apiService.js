@@ -20,6 +20,9 @@ export const login = ({ username, password, mode }) => {
   return axios.post(`${LoginServiceBaseUrl}/login.xml`, form);
 };
 
+export const checkCaptcha = ({ captcha, captcha_key }) =>
+  axios.post(`${BaseUrl}/check-captcha`, { captcha, captcha_key });
+
 export const getCaptcha = () => {
   return axios.get(`${BaseUrl}`);
 };

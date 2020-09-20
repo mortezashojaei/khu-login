@@ -3,7 +3,12 @@ import Input from "./Input";
 import LoginButton from "./LoginButton";
 import FormHeader from "./FormHeader";
 import LinkToManagePassword from "./LinkToManagePassword";
-import { logout, login, getCaptcha } from "../../services/apiService";
+import {
+  logout,
+  login,
+  getCaptcha,
+  checkCaptcha,
+} from "../../services/apiService";
 
 const RightSide = () => {
   const [username, setUserName] = useState("");
@@ -22,11 +27,11 @@ const RightSide = () => {
       setCaptchaKey("");
     } else {
       getCaptcha()
-        .then(response => {
+        .then((response) => {
           setCaptchaImage(`data:image/png;base64, ${response.data.captcha}`);
           setCaptchaKey(response.data.captcha_key);
         })
-        .catch(error => {
+        .catch((error) => {
           alert("مشکلی پیش آمده لطفا صفحه را بروزرسانی کنید");
         });
     }
@@ -36,29 +41,36 @@ const RightSide = () => {
     e.preventDefault();
     if (!successLogin) {
       setIsLoading(true);
-      login({
-        username,
-        password,
-        captcha_key,
-        captcha,
-        mode: 191
-      })
-        .then(response => {
-          setSuccessLogin(true);
-          setIsLoading(false);
-        })
-        .catch(error => {
-          setIsLoading(false);
 
-          alert("error");
-        });
+      setTimeout(() => {
+        checkCaptcha({ captcha, captcha_key })
+          .then(() => {
+            login({
+              username,
+              password,
+              mode: 191,
+            })
+              .then((response) => {
+                setSuccessLogin(true);
+                setIsLoading(false);
+              })
+              .catch((error) => {
+                setIsLoading(false);
+                alert("خطا در ورود");
+              });
+          })
+          .catch((error) => {
+            setIsLoading(false);
+            alert("کد کپچا اشتباه است");
+          });
+      }, 1500);
     } else {
       logout(username)
-        .then(response => {
+        .then((response) => {
           setUserName("");
           setSuccessLogin(false);
         })
-        .catch(error => {
+        .catch((error) => {
           alert("error");
         });
     }
@@ -73,7 +85,7 @@ const RightSide = () => {
         <div className="success-login-message">با موفقیت وارد شدید</div>
       )}
       <Input
-        onChange={e => {
+        onChange={(e) => {
           setUserName(e.target.value);
         }}
         readOnly={successLogin}
@@ -85,7 +97,7 @@ const RightSide = () => {
       {!successLogin && (
         <>
           <Input
-            onChange={e => {
+            onChange={(e) => {
               setPssword(e.target.value);
             }}
             value={password}
@@ -97,7 +109,7 @@ const RightSide = () => {
             <img className="captcha" src={captchaImage} />
           </div>
           <Input
-            onChange={e => {
+            onChange={(e) => {
               setCaptcha(e.target.value);
             }}
             value={captcha}
