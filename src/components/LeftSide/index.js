@@ -10,23 +10,25 @@ const LeftSide = () => {
 
   useEffect(() => {
     getMainPageData()
-      .then(response => {
+      .then((response) => {
         setSectionOne(response.data.section_one);
         setSectionTwo(response.data.section_two);
       })
-      .catch(error => {
+      .catch((error) => {
         alert("خطایی در دریافت مطالب رخ داده است");
       });
   }, []);
   return (
     <div className="login-more">
       <div className="sizefull flex-col-c ">
-        <Tabs
-          titleOne={section_one.title || ""}
-          titleTwo={section_two.title || ""}
-          tabsIndex={tabsIndex}
-          setTabsIndex={setTabsIndex}
-        />
+        {(section_one || section_two) && (
+          <Tabs
+            titleOne={section_one.title || ""}
+            titleTwo={section_two.title || ""}
+            tabsIndex={tabsIndex}
+            setTabsIndex={setTabsIndex}
+          />
+        )}
         <Cards
           items={tabsIndex ? section_one.data || [] : section_two.data || []}
         />
