@@ -22,7 +22,9 @@ export const login = ({ username, password, mode }) => {
   form.set("username", username);
   form.set("password", password);
   form.set("mode", mode);
-
+  form.set("a", Date.now());
+  form.set("producttype", 0);
+  
   return axios.post(`${LoginServiceBaseUrl}/login.xml`, form, {
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
