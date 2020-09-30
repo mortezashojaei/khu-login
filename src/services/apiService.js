@@ -8,7 +8,13 @@ export const logout = (username) => {
   const form = new FormData();
   form.set("username", username);
   form.set("mode", 190);
-  return axios.post(`${BaseUrl}/logout`, form);
+  form.set("a", Date.now());
+  form.set("producttype", 0);
+  return axios.post(`${BaseUrl}/logout`, form, {
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+  });
 };
 
 export const login = ({ username, password, mode }) => {
@@ -17,7 +23,11 @@ export const login = ({ username, password, mode }) => {
   form.set("password", password);
   form.set("mode", mode);
 
-  return axios.post(`${LoginServiceBaseUrl}/login.xml`, form);
+  return axios.post(`${LoginServiceBaseUrl}/login.xml`, form, {
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+  });
 };
 
 export const checkCaptcha = ({ captcha, captcha_key }) =>
