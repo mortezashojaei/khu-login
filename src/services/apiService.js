@@ -11,7 +11,9 @@ export const logout = (username) => {
   form.set("a", Date.now());
   form.set("producttype", 0);
   return axios.post(`${BaseUrl}/logout`, form, {
+    timeout: 1000000,
     headers: {
+      Accept: "*/*",
       "Content-Type": "application/x-www-form-urlencoded",
     },
   });
@@ -24,9 +26,11 @@ export const login = ({ username, password, mode }) => {
   form.set("mode", mode);
   form.set("a", Date.now());
   form.set("producttype", 0);
-  
+
   return axios.post(`${LoginServiceBaseUrl}/login.xml`, form, {
+    timeout: 1000000,
     headers: {
+      Accept: "*/*",
       "Content-Type": "application/x-www-form-urlencoded",
     },
   });
